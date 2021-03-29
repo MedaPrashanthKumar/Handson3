@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Edit Delete Table Row Example using JQuery - ItSolutionStuff.com</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+   <style>
+       
+
+
+       #accordion {
+    margin:100px auto;
+    padding:0;
+    width:500px;
+    }    
+#accordion li {
+    list-style:none;
+    width:100%;
+    }    
+#accordion  li label {
+    padding:10px;
+    display:block;
+    font-family: 'Bree Serif', 'serif';
+    font-size:30px;
+    line-height:30px;
+    color:#FFFFFF;
+    background-color:#3498db;
+    border-bottom: solid 8px #2980b9;
+    }    
+/* Hide the radio buttons */
+#accordion label + input[type='radio'] {
+      display: none;
+}    
+/* hide content by default */
+#accordion .content {
+    display:none;
+    padding:10px;
+    font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+    font-size:19px;
+    line-height:26px;
+    background-color:#2ecc71;
+}
+/* Show content boxes when the radio buttons are checked */
+#accordion label + input[type='radio']:checked + .content {
+    display:block;
+}
+
+#accordion label + input[type='radio'] {
+   display: none;
+}
+
+#accordion label + input[type='radio']:checked + .content {
+   display:block;
+}
+
+
+
+   </style>
+</head>
+<body>
+  <ul id="accordion">
+    <li>
+        <label for="first">Fist Title</label>
+        <input type="radio" name="accordion" id="first" checked>
+        <div class="content">
+            <p><!-- Tab Content --></p>
+        </div>
+    </li>
+    <li>
+        <label for="second">Second Title</label>
+        <input type="radio" name="accordion" id="second">
+        <div class="content">
+            <p><!-- Tab Content --></p>
+        </div>
+    </li>
+    <li>
+        <label for="third">Third Title</label>
+        <input type="radio" name="accordion" id="third">
+        <div class="content">
+            <p><!-- Tab Content --></p>
+        </div>
+    </li>       
+</ul>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[
+    {"Name":"John" ,"ID":"123456","Skills": "ReactJS,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Ram" ,"ID":"123457","Skills": "ReactJS,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Sita" ,"ID":"123458","Skills": "VLSI,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Lakshman" ,"ID":"123459","Skills": "ReactJS,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Urmila" ,"ID":"123410","Skills": "ReactJS,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Bharatha" ,"ID":"123411","Skills": "ReactJS,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Mandavi" ,"ID":"123412","Skills": "AWP,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Shathrugna" ,"ID":"123413","Skills": "RadarSystems,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Sutakeerthi" ,"ID":"123414","Skills": "DigitalCommunications,ANGULAR ,JS" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"},
+    {"Name":"Hanuman" ,"ID":"123415","Skills": "VHDL,VERILOG,PHYSICAL DESIGN" ,"Project":"Cognizant Internal" ,"HCM":"Dinesh"}
+
+]

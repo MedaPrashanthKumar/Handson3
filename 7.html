@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ********************Head Part********************** -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Recursive:300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" />
+  </head>
+
+  <!-- **************************** Styles **************** -->
+  <style>
+  
+
+    body {
+      background-color: #00004d;
+      background-attachment: fixed;
+      font-family: open Sans ;
+      font-size: 20px;
+    }
+    /* .container:before{
+        content: '';
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left:0;
+        right:0;
+    } */
+
+    .bird{
+      padding: 15px;
+      transition: transform .2s ease-in-out;
+    }
+    .card {
+      /* display: flex; */
+      align-items: center;
+          
+      /* background: inherit;
+     color: white; */
+      /* width: 350px; */
+      
+    }
+    /* .card:before {
+      background: inherit;
+    } */
+    .x {
+      margin-left: auto;
+    }
+    .save {
+      display: none;
+    }
+    .btne {
+      font-size: 70px;
+      color: white;
+      height: 150px;
+    }
+    #grde {
+      float: right;
+      margin-top: 50px;
+      cursor: pointer;
+      display: none;
+    }
+    #grde:hover{
+      color:chartreuse;
+    }
+    #grdl {
+      float: right;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+    #grdl:hover{
+      color:chartreuse;
+    }
+
+    .hide {
+  display: NONE;
+   position: absolute; 
+  font-size: 20px;
+  margin-left:75%;
+  margin-top: 50px;
+ 
+  color: white;
+
+  
+}
+    
+.myDIV:hover + .hide {
+  display: block;
+  color:white;
+}
+    
+.myDIV2:hover + .hide {
+  display: block;
+  color: white;
+}
+.del{
+cursor: pointer;
+}
+  </style>
+
+  <!-- ********************************* HTML Body Part ****************  -->
+  <body>
+    <!-- ***** Grid or List Togggle Button********* -->
+
+    <div class="container myDIV">
+      <!-- buttons for grid or list -->
+      <i class="fas btn btne fa-th " id="grde"></i>
+    </div>
+    <div class="hide container h5 text-light">List View</div>
+    <div class="container myDIV2">
+      <i class="fad btn btne fa-th-list" id="grdl"></i>
+    </div>
+    <div class="hide container h5">Grid View</div>
+
+    
+   
+    
+
+    <!-- ******* Grid Display HTML ********* -->
+    <div class="container mt-5" id="grid1">
+      <div class="row row-cols-1 row-cols-md-3 contai"></div>
+      <br />
+    </div>
+
+    <!-- ********* Table Display HTML************ -->
+
+    <div class="container mt-5" id="initial">
+      <div class="table listInitial" id="list1">
+        <table class="table table-bordered bg-light text-center">
+          <thead>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Skills</th>
+            <th>Project</th>
+            <th>HCM</th>
+            <th>Edit or Remove Employee</th>
+            
+          </thead>
+          <!-- List View -->
+          <tbody class="tableRow"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ********************** Script Part **************** -->
+
+    <script>
+      //  ************* toggle Button initialisers***********
+      let toggleSelect = document.getElementById("grde");
+      let toggleSelect2 = document.getElementById("grdl");
+      let listView = document.getElementById("list1");
+      let gridView = document.getElementById("grid1");
+
+      // ************** Grid Functionality On Button ***************
+      toggleSelect2.onclick = function () {
+        toggleSelect.style.display = "inline";
+        toggleSelect2.style.display = "none";
+        // renderUsersList();
+        console.log("list is active");
+        gridView.style.display = "none";
+        listView.style.display = "block";
+      };
+      // ************** List Functionality On Button ***************
+
+      toggleSelect.onclick = function () {
+        toggleSelect2.style.display = "inline";
+        toggleSelect.style.display = "none";
+
+        console.log("grid is active");
+        listView.style.display = "none";
+        gridView.style.display = "block";
+
+        // if (!toggle) {
+        //     return;
+        // }
+        // renderUsersGrid();
+      };
+
+      let data1;
+
+      //   if(toggle){
+
+      //     document.firstChild.lastChild.createElement("img");
+
+      // }
+
+      // let index = 0;
+
+      // ********** Json data taken into Array *********
+      let users = [
+        {
+          eno: 900,
+          name: "Vasu",
+          age: 20,
+          skills: "C++",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+          genger: "male",
+          project: "Cognizant Internal ",
+          HCM: "ALex",
+        },
+        {
+          eno: 1400,
+          name: "Sneha",
+          skills: "React, MongoDB",
+          img:
+            "https://www.ghrlaw.net/wp-content/uploads/2020/03/Dummy-Icon-Female-x-1.jpg",
+          project: "Cognizant Internal",
+          age: 22,
+          genger: "female",
+          HCM: "Joe",
+        },
+       
+        {
+          eno: 1100,
+          name: "Anirudh",
+          age: 20,
+          skills: "Angular,JavaScript ",
+          project: "Cognizant Internal ",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+
+          genger: "male",
+          HCM: "Joe",
+        },
+        {
+          eno: 1200,
+          name: "Bhavani",
+          age: 20,
+          skills: "Angular, TypeScript",
+          project: "Cognizant Internal ",
+          img:
+            "https://www.ghrlaw.net/wp-content/uploads/2020/03/Dummy-Icon-Female-x-1.jpg",
+
+          genger: "female",
+          designation: "manager",
+          address: "vizag",
+          HCM: "Robert",
+        },
+        {
+          eno: 1600,
+          name: "Lakshmi",
+          age: 20,
+          skills: "MYSQL, NodeJs",
+          img:
+            "https://www.ghrlaw.net/wp-content/uploads/2020/03/Dummy-Icon-Female-x-1.jpg",
+          project: "Cognizant Internal",
+          genger: "female",
+          HCM: "ALex",
+        },
+       
+        {
+          eno: 1000,
+          name: "Vijay",
+          age: 21,
+          skills: "React, Express JS",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+          project: "Cognizant Internal ",
+
+          genger: "male",
+          HCM: "Joe",
+        },
+       
+        {
+          eno: 1500,
+          name: "Preethi",
+          age: 20,
+          skills: "Django, Swift",
+          img:
+            "https://www.ghrlaw.net/wp-content/uploads/2020/03/Dummy-Icon-Female-x-1.jpg",
+          project: "Cognizant External",
+          genger: "female",
+          HCM: "Robert",
+        },
+      
+        {
+          eno: 1700,
+          name: "Kunal",
+          age: 23,
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+
+          skills: "Spring, SASS",
+          genger: "male",
+          project: "Cognizant Internal",
+          designation: "manager",
+          address: "hyderabad",
+          HCM: "Robert",
+        },
+        {
+          eno: 1300,
+          name: "Manasa",
+          age: 20,
+          skills: "BootStrap, CSS, HTML",
+          project: "Cognizant Internal ",
+          img:
+            "https://www.ghrlaw.net/wp-content/uploads/2020/03/Dummy-Icon-Female-x-1.jpg",
+          genger: "female",
+          HCM: "Joe",
+        },
+        {
+          eno: 1800,
+          name: "Rajesh",
+          age: 20,
+          skills: "Angular, SQL, PL/SQL",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+            project: "Cognizant External",
+
+          genger: "male",
+          HCM: "ALex",
+        },
+        {
+          eno: 1900,
+          name: "Veeru",
+          age: 20,
+          skills: "Objective-C",
+          project: "Cognizant Internal",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+
+          genger: "male",
+          HCM: "Robert",
+        },
+        {
+          eno: 2000,
+          name: "Gopi",
+          age: 20,
+          skills: "Java, Python, C++",
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+          project: "Cognizant External ",
+          genger: "male",
+          HCM: "ALex",
+        },
+        {
+          eno: 2100,
+          name: "Teja",
+          age: 20,
+          img:
+            "https://everythingcivic.com/wp-content/uploads/2019/09/male.jpg",
+          skills: "Python3, Django",
+          genger: "male",
+          project: "Cognizant Internal",
+          HCM: "Joe",
+        },
+      ];
+
+      //  *********  *************CARD VIEW***************
+      function renderUsersGrid() {
+        // console.log(users);
+
+        // console.log("here", toggle);
+        let html = "";
+
+        for (let y = 0; y < users.length; y++) {
+          let htmlSegment = `<div class="col ml-2  mt-4 bird"  >
+                                        <div class="card">
+                                                <i class="fal fa-times text-danger h1 x "  onclick="delBoth(${y})" ></i>  
+                                                <img src="${users[y].img}" width="200px" height="220px" alt="">
+                                                    <div class="card-body">
+
+                                                      <table class="table">
+                                                        <tr>
+                                                          <td><b> Name </b></td>
+                                                          <td><b>:</b></td>
+                                                          <td> ${users[y].name}</td>
+
+                                                        </tr>  
+                                                        <tr>
+                                                          <td><b> ID:</b></td>
+                                                          <td><b>:</b></td>
+                                                          <td> ${users[y].eno}</td>
+                                                        </tr>  
+                                                        <tr>
+                                                          <td> <b>Skills</b></td>
+                                                          <td><b>:</b></td>
+                                                          <td>  <span id="id${y}"> ${users[y].skills}</span></td>
+                                                        </tr>  
+                                                        <tr>
+                                                          <td> <b>Project</b></td>
+                                                          <td><b>:</b></td>
+                                                          <td> ${users[y].project}  </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td> <b>HCM</b></td>
+                                                          <td><b>:</b></td>
+                                                          <td> ${users[y].HCM}</td>
+                                                        </tr>
+                                                      </table>  
+                                                                   
+                                            <button class="btn   text-primary  ml-auto" id="bte${y}" onclick="editSkill(${y})">Edit Skills</button>
+                                       <button class="btn text-primary save" id="bts${y}" onclick="saveSkill(${y})" >Save</button>
+                                       <button class="btn text-primary cancel button" style="display:none"  id="btc${y}" onclick="cancelSkill(${y})" >Cancel</button>
+                                          
+                                </div>
+                            </div>
+                        </div>`;
+
+          html += htmlSegment;
+        }
+        let contai = document.querySelector(".contai");
+        contai.innerHTML = html;
+       
+
+       
+      }
+      renderUsersGrid();
+
+      // ************ LIST DISPLAY***************
+
+      function renderUsersList() {
+        
+     
+        let html2 = "";
+        for (let y = 0; y < users.length; y++) {
+
+        //  String/segment Concatination
+          let htmlSegment2 = `
+                <tr class="tRowDelete">
+            
+                 <td>${users[y].name}</td>
+                 <td>${users[y].eno}</td>
+                      
+                 <td> <span id="sd1${y}"> ${users[y].skills}</span> </td>
+                  <td>${users[y].project}</td>
+                  <td>${users[y].HCM}</td>
+                 <td>   <button class="btn text-primary fad fa-edit h4" id="bte2${y}" onclick="editSkill(${y})"></button> &nbsp;
+                                       <button class="btn text-primary save" id="bts2${y}" onclick="saveTable(${y})" >Save</button>
+                                       <button class="btn text-primary cancel button" style="display:none"  id="btc2${y}" onclick="cancelSkill(${y})" >Cancel</button> 
+                                       <i class="far fa-minus-octagon text-danger del h4" onclick="delBoth(${y})"></i>
+                                       </td>
+                                      
+                                       
+                                       </tr>                            
+                `;
+
+          html2 += htmlSegment2;
+        }
+        
+
+        let tableRow = document.querySelector(".tableRow");
+        tableRow.innerHTML = html2;
+        //
+        //  console.log(html2);
+      }
+
+
+      renderUsersList();
+      orderArray=[]
+      let lastElementIndex;
+
+
+
+
+      // function delBoth(index){
+      
+       
+      
+      // ******************Edit functionality *****************************
+
+
+      function editSkill(index) {
+        // renderUsersList();
+        // renderUsersGrid();
+        
+        //  console.log("success "+index);
+
+        // *************** edit for card**********
+                        let span, input, text;
+                        //  let id;
+
+                        //  id=index.toString();
+                        span = document.getElementById("id" + index);
+                        //  span.innerHTML
+                        // console.log(span.innerHTML);
+                        data1 = span.innerHTML;
+
+                        orderArray.push(data1);
+                        
+
+
+                        span.innerHTML = "<input type='text' class='form-control' id='dt" + index + "'>";
+                        let button = document.getElementById("bte" + index).style.display ="none";
+                        let save = document.getElementById("bts" + index).style.display ="inline";
+                        let cancel = document.getElementById("btc" + index).style.display ="inline";
+                         lastElementIndex= orderArray.length-1;
+
+                        // *********** Edit for table***************
+
+                        let span2, input2, text2;
+                        span2 = document.getElementById("sd1" + index);
+                        data2 = span2.innerHTML;
+                        span2.innerHTML = "<input type='text' id='dt2" + index + "'>";
+                        let button2 = document.getElementById("bte2" + index).style.display ="none";
+                        let save2 = document.getElementById("bts2" + index).style.display = "inline";
+                        let cancel2 = document.getElementById("btc2" + index).style.display =  "inline";
+                        
+
+        //  input = document.createElement("input");
+        //  document.querySelectorAll("span")[index]=
+        //  console.log(span,input);
+      }
+      // *****************SAVE SKILLS****************************
+      function saveSkill(index) {
+
+          
+
+        let editButton = document.getElementById("bte" + index).style.display ="inline";
+        let data = document.getElementById("dt" + index).value;
+        let save = document.getElementById("bts" + index).style.display ="none";
+        let span = document.getElementById("id" + index);
+         this.document.getElementById("btc"+index).style.display="none";  
+        span.innerHTML = data;
+        users[index].skills = data;
+        // renderUsersList();
+      }
+      function saveTable(index) {
+        let beta = document.getElementById("dt2" + index).value;
+        this.document.getElementById("bte2" + index).style.display = "inline";
+        this.document.getElementById("btc2" + index).style.display = "none";
+        this.document.getElementById("bts2" + index).style.display = "none";
+        this.document.getElementById("dt2" + index).style.display = "none";
+        users[index].skills = beta;
+
+        // renderUsersGrid();
+        // renderUsersList();
+      }
+
+      //  function saveSkill2(index){
+
+      //       let editButton2 = document.getElementById("bte2" + index).style.display ="inline";
+      //       let data3 = document.getElementById("dt2" + index).value;
+      //       let save2 = document.getElementById("bts2" + index).style.display ="none";
+      //       let span2 = document.getElementById("id2" + index);
+
+      //       span2.innerHTML = data3;
+      //       users[index].skills=data3;
+      //       renderUsersList();
+      //       // console.log(data);
+      //     }
+
+
+      // ********************* Remove Card******************
+          
+    
+      function delBoth(index) {
+    
+    myFunctionList(index);
+        myFunction(index);
+}
+
+      function  myFunction(index){
+         // console.log(index);
+           
+            // this.document.querySelector("#initial").style.display="none";
+            this.document.querySelectorAll(".bird")[index].style.display = "none";
+           
+
+      }
+      function myFunctionList(index){
+        this.document.querySelectorAll(".tRowDelete")[index].style.display="none";
+        // console.log(aree);
+
+       
+
+      }
+      
+      //  ******************Cancel Button*************************
+      function cancelSkill(index) {
+        let span = document.getElementById("id" + index);
+        
+        span.innerHTML = orderArray[lastElementIndex--];
+
+                console.log(span.innerHTML);
+        this.document.getElementById("bts" + index).style.display = "none";
+        let editButton = document.getElementById("bte" + index).style.display ="inline";
+        let cancel = document.getElementById("btc" + index).style.display ="none";
+
+        let span2 = document.getElementById("sd1" + index);
+
+        span2.innerHTML = data2;
+        this.document.getElementById("bts2" + index).style.display = "none";
+        let editButton2 = (document.getElementById("bte2" + index).style.display = "inline");
+        let cancel2 = (document.getElementById("btc2" + index).style.display = "none");
+
+        // console.log("data1",data1);
+        // span.innerHTML=data1;
+      }
+
+      //  document.getElementById("tableDisplay").style.display="none";
+
+     
+    </script>
+  </body>
+</html>

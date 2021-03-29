@@ -1,0 +1,113 @@
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<title>Week3 Details</title> 
+     
+	<!-- INCLUDING JQUERY-->
+	<script src= "https://code.jquery.com/jquery-3.5.1.js"> 
+	</script> 
+
+	<!-- CSS FOR STYLING THE PAGE -->
+	<style> 
+		table { 
+			margin: 0 auto; 
+			font-size: large; 
+			border: 1px solid black; 
+		} 
+
+		
+
+		td { 
+			background-color: #E4F5D4; 
+			border: 1px solid black; 
+		} 
+
+		th, 
+		td { 
+			font-weight: bold; 
+			border: 1px solid black; 
+			padding: 10px; 
+			text-align: center; 
+		} 
+
+		td { 
+			font-weight: lighter; 
+		} 
+
+		.cards tbody tr {
+    					float: left;
+				}
+		.cards tbody td {
+    			display: block;
+			}
+
+
+
+
+
+
+	</style> 
+</head> 
+
+<body> 
+    <h1 style="text-align: center;">Employee Details</h1>
+  
+	<section> 
+		 
+
+		<!-- TABLE CONSTRUCTION-->
+		<table id='table'> 
+			<!-- HEADING FORMATION -->
+			<tr> 
+				<th>Name</th> 
+				<th>ID</th> 
+				<th>Skills</th> 
+                <th>Project</th> 
+                <th>HCM</th> 
+			</tr> 
+
+			<script> 
+				$(document).ready(function () { 
+
+					// FETCHING DATA FROM JSON FILE 
+					$.getJSON("empdatails.json", 
+							function (data) { 
+						var employee= ''; 
+
+						// ITERATING THROUGH OBJECTS 
+						$.each(data, function (key, value) { 
+
+							//CONSTRUCTION OF ROWS HAVING 
+							// DATA FROM JSON OBJECT 
+							employee += '<tr>'; 
+							employee += '<td>' + 
+								value.Name + '</td>'; 
+
+							employee += '<td>' + 
+                                value.ID + '</td>'; 
+                                
+                            employee += '<td>' + 
+								value.Skills+ '</td>'; 
+
+							employee += '<td>' + 
+								value.Project + '</td>'; 
+
+							employee += '<td>' + 
+								value.HCM+ '</td>'; 
+
+							employee += '</tr>'; 
+						}); 
+						
+						//INSERTING ROWS INTO TABLE 
+						$('#table').append(employee); 
+					}); 
+				}); 
+
+			</script> 
+    </section> 
+    
+
+</body> 
+
+</html> 

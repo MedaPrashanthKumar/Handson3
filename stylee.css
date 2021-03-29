@@ -1,0 +1,252 @@
+body {
+    max-width: 1000px;
+    max-height: 2000px;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+    box-sizing: border-box;
+}
+
+
+.head1 {
+    position: relative;
+    width:100%;
+    height: 100px;
+    background-color: #333;
+    color: white;
+   
+}
+.logo {
+    position: absolute;
+    left: 50px;
+    font-size: 48pt;
+    top: -41px;
+}
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 25px;
+    left: 500px;
+    width: 42%;
+
+}
+li,a{
+   list-style: none;
+   color: white;
+   text-decoration:none;
+   font-size: 16pt;
+}
+
+.head2-ul {
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
+    margin-left: -27px;
+    align-items: flex-start;
+}
+.head2-ul li {
+    color: #333;
+}
+
+main {  
+    display: inline-block;
+    margin-bottom: -35px;
+}
+
+.head2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-search {   
+    width: 21%;
+    height: 35px;
+    margin-left: -45px;
+}
+
+.sec {
+    background-color: rgba(236, 232, 232, 0.952);
+    display: inline-flex;
+    width: 100%;
+
+}
+
+.mask-img {
+    height: 205px;
+    margin-left: 20px;
+    width: 20%;
+    display: block;
+    margin-top: 112px;
+}
+
+.sec h1 {
+    display: inline-block;
+    font-size: 58pt;
+    color: #333333;
+    width: 88%;
+    margin-top: 122px;
+    font-weight: normal;
+    height: 75%;
+}
+
+.sec p {
+    font-size: 18pt;
+    color: #333;
+    text-align: left;
+}
+
+.sec div {
+    width:90%
+}
+
+h2 {
+    color: #333;
+    font-size: 30pt;
+    font-weight: normal;
+    padding-left:32px;
+    padding-top: 5px;
+    margin-bottom: 30px;
+}
+
+.deals {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-top: -40px;
+}
+
+
+.deals-figure {
+    margin-left: 10px;
+    width: 100%;
+    margin-right: 10px;
+}
+
+img {
+    width: 100%;
+    display: inline-block;
+}
+
+.deals-figure >figcaption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: center;
+}
+
+h2 span {
+    font-size: 190%;
+}
+
+.fashion-heading {
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
+.fashion-div1,.fashion-div2 {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -20px;
+}
+
+.fashion-div1 figure,
+.fashion-div2 figure {
+
+    text-align: center;
+    color:#333;
+    border: 5px solid #dbf3fa;
+    background-color:#dbf3fa ;
+    font-size: 20pt;
+}
+
+.fashion-div2 {
+    margin-top: -10px;
+}
+
+footer {
+    height: fit-content;
+}
+.footer-div1 ,
+.footer-div2,
+.footer-div3,
+.footer-div4 {
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:20px;
+  
+}
+
+.footer-div1 > a ,
+.footer-div2 > a,
+.footer-div3 > a,
+.footer-div4 > a {   
+
+    display: block;
+    color: #333;
+    border-right:0.1px solid #333;
+    font-size: 14pt;
+}
+.footer-div1 > a {
+    text-align: left;  
+}
+.footer-div2 > a {
+    padding-right: 7px;
+}
+.footer-div1 {
+    text-align: center;
+    justify-content: space-between;
+}
+.footer-div2 {
+    text-align: center;
+    justify-content: space-between;
+}
+
+.footer-div3 {
+    width: 102%;
+    text-align: center;
+}
+
+.footer-div5 {
+    background-color: #131a22;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 20%;
+}
+.footer-div5 h3 {
+    font-size: 18pt;
+    color: white;
+    font-weight: normal;
+    display:block;
+    text-align: justify;
+    margin-bottom: -3px;
+}
+
+.footer-div5 section li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: -2px;
+}
+
+.sec-aboutus {
+    margin-top: -30px;
+    padding-bottom: 20px;
+}
+
+.div-col-2,.div-col-3,.div-col-4 {
+    display: block;
+    text-align: left;
+    margin-left: -30px;
+}
+
+
+.div-col-4 {
+    margin-right: 30px;
+}
